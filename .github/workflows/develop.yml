@@ -5,18 +5,21 @@ on:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
+    
+defaults:
+  run:
+    working-directory: ./manuscripts_be
 
 jobs:
   test_development:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./manuscripts_be
+   
 
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
+      working-directory: ./manuscripts_be
       uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
       with:
         ruby-version: 3.0.0
