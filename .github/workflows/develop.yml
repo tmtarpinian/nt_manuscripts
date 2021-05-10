@@ -10,6 +10,11 @@ jobs:
   test_develop:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: scripts
+
 
     steps:
     - uses: actions/checkout@v2
