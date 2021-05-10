@@ -13,7 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ~/manuscripts_be
+        working-directory: ../../manuscripts_be
 
     steps:
     - uses: actions/checkout@v2
