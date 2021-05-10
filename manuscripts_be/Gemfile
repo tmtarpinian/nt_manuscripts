@@ -18,7 +18,7 @@ gem 'puma', '~> 5.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'active_model_serializers'
-
+gem 'rspec-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -33,7 +33,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
-  gem 'rspec-rails'
+  
   gem 'shoulda-matchers', '~> 4.0'
 end
 
