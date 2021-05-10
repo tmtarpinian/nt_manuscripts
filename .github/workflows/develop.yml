@@ -8,15 +8,16 @@ on:
 
 jobs:
   test_develop:
-
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
-        working-directory: manuscripts_be
 
     steps:
+    - name: checkout repo
     - uses: actions/checkout@v2
+    - name: Use manuscripts_be
+      uses: ./manuscripts_be
     - name: Set up Ruby
       uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
       with:
