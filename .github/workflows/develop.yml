@@ -13,8 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./manuscripts_be
-
+        working-directory: ~/manuscripts_be
 
     steps:
     - uses: actions/checkout@v2
@@ -22,8 +21,6 @@ jobs:
       uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
       with:
         ruby-version: 3.0.0
-        working-directory: ./manuscripts_be
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run Tests
-      working-directory: ./manuscripts_be
       run: bundle exec rspec
