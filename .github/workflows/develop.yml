@@ -1,17 +1,19 @@
 name: development
 
 on:
+  push:
+    branches: [ develop ]
   pull_request:
     branches: [ development ]
 
 jobs:
-  test:
+  test_develop:
 
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
-        working-directory: manuscripts_be
+        working-directory: ./manuscripts_be
 
 
     steps:
