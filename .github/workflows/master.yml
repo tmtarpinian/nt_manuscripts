@@ -1,16 +1,18 @@
-name: production
+name: master
 
 on:
   pull_request:
-    branches: [ production ]
+    branches: [ master ]
 
 jobs:
   test_master:
+
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
         working-directory: ./manuscripts_be
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
