@@ -10,12 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_043533) do
+ActiveRecord::Schema.define(version: 2021_05_11_232519) do
 
   create_table "references", force: :cascade do |t|
     t.string "book", null: false
     t.integer "chapter", null: false
     t.integer "verse", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "references_texts", id: false, force: :cascade do |t|
+    t.integer "reference_id"
+    t.integer "text_id"
+    t.index ["reference_id"], name: "index_references_texts_on_reference_id"
+    t.index ["text_id"], name: "index_references_texts_on_text_id"
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.string "number"
+    t.string "date"
+    t.string "library"
+    t.string "photo_link"
+    t.string "wiki_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
