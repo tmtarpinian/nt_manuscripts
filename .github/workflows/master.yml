@@ -1,12 +1,11 @@
-name: branches
+name: master
 
 on:
-  push:
-    branches:
-      - '*'
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  test_branch:
+  test_master:
 
     runs-on: ubuntu-latest
     defaults:
