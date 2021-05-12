@@ -1,9 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Reference, type: :model do
-  BOOK = "Romans"
+  	BOOK = "Romans"
 	CHAPTER = 1
 	VERSE = 13
+
+	NUMBER = "p39"
+	DATE = "III"
+	TYPE = "Alexandrian"
+ 	GROUP = "Papyri"
+	
+	let(:text_one){Text.create(number: NUMBER, date: DATE, text_type: TYPE, group: GROUP)}
 	
 	let(:reference_one){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
 	
