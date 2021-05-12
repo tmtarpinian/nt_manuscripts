@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Reference, type: :model do
-  BOOK = "Romans"
-	CHAPTER = 1
-	VERSE = 13
 	
+	let(:text_one){Text.create(number: NUMBER, date: DATE, text_type: TYPE, group: GROUP)}
+	let(:text_two){Text.create(number: NUMBER_TWO, date: DATE_TWO, text_type: TYPE_TWO, group: GROUP_TWO)}
 	let(:reference_one){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
 	
   context "Database Table Columns" do
@@ -38,13 +37,13 @@ RSpec.describe Reference, type: :model do
     end
 
 	context "Associations" do
-
-		xit { is_expected.to belong_to(:account) }
-		xit { is_expected.to have_many(:witnesses) }
-        
-		xit "belongs to a user" do
-			expect(user1.games).to include(game)
-			expect(game.user_id).to eq(user1.id)
+		it "has many texts" do
+			reference_one.texts << text_one
+			reference_one.texts << text_two
+			expect(reference_one.texts).to include(text_one)
+			expect(reference_one.texts.length).to be(NUMBER_OF_REFERENCES)
+			expect(reference_one.texts.last.text_type).to eq(TYPE_TWO)
+			expect(reference_one.texts.first.number).to eq(NUMBER)
 		end
 	end
 end
