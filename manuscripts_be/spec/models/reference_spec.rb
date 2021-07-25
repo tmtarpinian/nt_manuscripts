@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: references
+#
+#  id         :integer          not null, primary key
+#  book       :string           not null
+#  chapter    :integer          not null
+#  verse      :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe Reference, type: :model do
