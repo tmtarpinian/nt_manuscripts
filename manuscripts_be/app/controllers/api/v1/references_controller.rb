@@ -12,7 +12,7 @@ class Api::V1::ReferencesController < ApplicationController
         if @reference
             render json: @reference, status: :created
         else
-            render json: @reference.errors, status: :unprocessable_entity
+            render json: "No reference found", status: :unprocessable_entity
         end
     end
 
