@@ -49,7 +49,15 @@ RSpec.describe Reference, type: :model do
     end
 
 	context "Associations" do
+		it "has a reference_text" do
+			expect(reference_one.reference_texts).to include(reference_text_one)
+			expect(reference_one.reference_texts).to include(reference_text_two)
+			expect(reference_one.reference_texts.length).to eq(NUMBER_OF_REFERENCES)
+		end
+
 		it "has many texts" do
+			expect(reference_one.reference_texts).to include(reference_text_one)
+			expect(reference_one.reference_texts).to include(reference_text_two)
 			expect(reference_one.texts).to include(text_one)
 			expect(reference_one.texts.length).to be(NUMBER_OF_REFERENCES)
 		end

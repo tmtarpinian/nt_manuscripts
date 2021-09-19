@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe ReferenceText, type: :model do
   
 	let(:text){Text.create(number: NUMBER, date: DATE, group: GROUP)}

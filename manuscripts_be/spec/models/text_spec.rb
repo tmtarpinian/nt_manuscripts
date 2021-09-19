@@ -16,10 +16,10 @@
 require 'rails_helper'
 
 RSpec.describe Text, type: :model do
-
+	
 	let(:text_one){Text.create(number: NUMBER, date: DATE, group: GROUP)}
 	let(:reference_one){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
-  	let(:reference_two){Reference.create(book: BOOK_TWO, chapter: CHAPTER_TWO, verse: VERSE_TWO)}
+	let(:reference_two){Reference.create(book: BOOK_TWO, chapter: CHAPTER_TWO, verse: VERSE_TWO)}
 	let(:reference_text_one) {ReferenceText.create(reference_id: reference_one.id, text_id: text_one.id)}
 	let(:reference_text_two) {ReferenceText.create(reference_id: reference_two.id, text_id: text_one.id)}
 	
@@ -61,8 +61,16 @@ RSpec.describe Text, type: :model do
     end
 
 	context "Associations" do
+		
+		it "has a reference_text" do
+			expect(text_one.reference_texts).to include(reference_text_one)
+			expect(text_one.reference_texts).to include(reference_text_two)
+			expect(text_one.reference_texts.length).to eq(NUMBER_OF_REFERENCES)
+		end
 
 		it "has many references" do
+			expect(text_one.reference_texts).to include(reference_text_one)
+			expect(text_one.reference_texts).to include(reference_text_two)
 			expect(text_one.references).to include(reference_one)
 			expect(text_one.references.length).to be(NUMBER_OF_REFERENCES)
 		end
