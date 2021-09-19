@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_09_19_131947) do
 
-  create_table "reference_texts", id: false, force: :cascade do |t|
+  create_table "reference_texts", force: :cascade do |t|
     t.integer "reference_id"
     t.integer "text_id"
     t.datetime "created_at", precision: 6, null: false

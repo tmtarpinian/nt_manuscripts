@@ -1,17 +1,30 @@
-require 'rails_helper'
-
 RSpec.describe ReferenceText, type: :model do
-
+  
 	let(:text){Text.create(number: NUMBER, date: DATE, group: GROUP)}
 	let(:reference){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
-  let(:text_reference){ReferenceText.create(text_id: text.id, reference_id: reference.id)}
+  	let(:text_reference){ReferenceText.create(text_id: text.id, reference_id: reference.id)}
 	
   context "Database Table Columns" do
     it { is_expected.to have_db_column(:created_at).of_type(:datetime) }
     it { is_expected.to have_db_column(:updated_at).of_type(:datetime) }
-	  it { is_expected.to have_db_column(:reference_id) }
+	it { is_expected.to have_db_column(:reference_id) }
     it { is_expected.to have_db_column(:text_id) }
+	it { is_expected.to have_db_index(:reference_id) }
+	it { is_expected.to have_db_index(:text_id) }
   end
+
+  	context "Validations" do
+		let(:text_reference_one){ReferenceText.create(text_id: text.id, reference_id: reference.id)}
+		let(:text_reference_two){ReferenceText.new(text_id: BOOK, reference_id: VERSE, id: text_reference_one.id)}
+		it "has a unique ID" do
+			expect(text_reference_two).not_to be_valid
+		end
+
+		it "has a unique foreign key combination" do
+			text_reference_two.attributes={text_id: text.id, reference_id: reference.id}
+			expect(text_reference_two).not_to be_valid
+		end
+	end
 
 	context "Associations" do
 		it "belongs to a text" do

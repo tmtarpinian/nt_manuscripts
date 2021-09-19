@@ -57,7 +57,6 @@ RSpec.describe Text, type: :model do
 	
 		it { should validate_presence_of(:date) }
 		it { should validate_presence_of(:number)}
-		it { should validate_presence_of(:text_type)}
     	it { should validate_presence_of(:group)}
     end
 

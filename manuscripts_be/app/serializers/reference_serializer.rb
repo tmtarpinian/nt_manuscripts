@@ -11,5 +11,6 @@
 #
 class ReferenceSerializer < ActiveModel::Serializer
   attributes :id, :book, :chapter, :verse
-  has_many :texts
+  has_many :reference_texts
+  has_many :texts, through: :reference_texts
 end
