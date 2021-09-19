@@ -1,18 +1,30 @@
+# == Schema Information
+#
+# Table name: references
+#
+#  id         :integer          not null, primary key
+#  book       :string           not null
+#  chapter    :integer          not null
+#  verse      :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe Reference, type: :model do
 	
-	let(:text_one){Text.create(number: NUMBER, date: DATE, text_type: TYPE, group: GROUP)}
-	let(:text_two){Text.create(number: NUMBER_TWO, date: DATE_TWO, text_type: TYPE_TWO, group: GROUP_TWO)}
+	let(:text_one){Text.create(number: NUMBER, date: DATE, group: GROUP)}
+	let(:text_two){Text.create(number: NUMBER_TWO, date: DATE_TWO, group: GROUP_TWO)}
 	let(:reference_one){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
+	let(:reference_text_one) {ReferenceText.create(reference_id: reference_one.id, text_id: text_one.id)}
+	let(:reference_text_two) {ReferenceText.create(reference_id: reference_one.id, text_id: text_two.id)}
 	
   context "Database Table Columns" do
 		it { is_expected.to have_db_column(:book).of_type(:string) }
 		it { is_expected.to have_db_column(:chapter).of_type(:integer) }
 		it { is_expected.to have_db_column(:verse).of_type(:integer) }
-
-		#it { is_expected.to have_db_index(:member_id).unique(true) }
-		#it { is_expected.to have_db_foreign_key(:member_id) }
+		it { is_expected.to have_db_column(:created_at).of_type(:datetime) }
+		it { is_expected.to have_db_column(:updated_at).of_type(:datetime) }
   end
 
 	context "Attributes" do
@@ -37,13 +49,17 @@ RSpec.describe Reference, type: :model do
     end
 
 	context "Associations" do
+		it "has a reference_text" do
+			expect(reference_one.reference_texts).to include(reference_text_one)
+			expect(reference_one.reference_texts).to include(reference_text_two)
+			expect(reference_one.reference_texts.length).to eq(NUMBER_OF_REFERENCES)
+		end
+
 		it "has many texts" do
-			reference_one.texts << text_one
-			reference_one.texts << text_two
+			expect(reference_one.reference_texts).to include(reference_text_one)
+			expect(reference_one.reference_texts).to include(reference_text_two)
 			expect(reference_one.texts).to include(text_one)
 			expect(reference_one.texts.length).to be(NUMBER_OF_REFERENCES)
-			expect(reference_one.texts.last.text_type).to eq(TYPE_TWO)
-			expect(reference_one.texts.first.number).to eq(NUMBER)
 		end
 	end
 end
