@@ -14,8 +14,9 @@
 #  group      :string
 #
 class Text < ApplicationRecord
-    has_and_belongs_to_many :references
-    validates_presence_of  :number, :date, :text_type, :group
+    has_many :reference_texts
+    has_many :references, through: :reference_texts
+    validates_presence_of  :number, :date, :group
 
     # scope :ten_texts, lambda { limit(10) }
 end

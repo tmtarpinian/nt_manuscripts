@@ -14,6 +14,6 @@
 #  group      :string
 #
 class TextSerializer < ActiveModel::Serializer
-  attributes :id, :number, :date, :text_type, :group, :library, :photo_link, :wiki_link
+  attributes :id, :number, :date, :group, :library, :photo_link, :wiki_link
   has_many :references
 end
