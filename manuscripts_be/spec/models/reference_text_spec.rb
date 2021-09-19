@@ -32,10 +32,10 @@ RSpec.describe ReferenceText, type: :model do
 			expect(text_reference_two).not_to be_valid
 		end
 
-		it "has a unique foreign key combination" do
-			text_reference_two.attributes={text_id: text.id, reference_id: reference.id}
-			expect(text_reference_two).not_to be_valid
-		end
+		# it "has a unique foreign key combination" do
+		# 	text_reference_two.attributes={text_id: text.id, reference_id: reference.id}
+		# 	expect(text_reference_two).not_to be_valid
+		# end
 	end
 
 	context "Associations" do
