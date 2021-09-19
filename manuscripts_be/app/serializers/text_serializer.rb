@@ -10,7 +10,6 @@
 #  wiki_link  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  text_type  :string
 #  group      :string
 #
 class TextSerializer < ActiveModel::Serializer

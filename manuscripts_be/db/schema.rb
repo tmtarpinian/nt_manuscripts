@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_19_131947) do
+ActiveRecord::Schema.define(version: 2021_09_19_174242) do
 
   create_table "reference_texts", force: :cascade do |t|
     t.integer "reference_id"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2021_09_19_131947) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "group"
+  end
+
+  create_table "westcott_horts", force: :cascade do |t|
+    t.string "text_type"
+    t.string "order"
+    t.integer "reference_text_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reference_text_id"], name: "index_westcott_horts_on_reference_text_id"
   end
 
 end
