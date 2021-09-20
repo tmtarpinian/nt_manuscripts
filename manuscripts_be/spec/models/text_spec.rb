@@ -10,7 +10,6 @@
 #  wiki_link  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  text_type  :string
 #  group      :string
 #
 require 'rails_helper'
@@ -22,11 +21,11 @@ RSpec.describe Text, type: :model do
 	let(:reference_two){Reference.create(book: BOOK_TWO, chapter: CHAPTER_TWO, verse: VERSE_TWO)}
 	let(:reference_text_one) {ReferenceText.create(reference_id: reference_one.id, text_id: text_one.id)}
 	let(:reference_text_two) {ReferenceText.create(reference_id: reference_two.id, text_id: text_one.id)}
+	let(:westcott_hort) {WestcottHort.create(text_type: TYPE, order: ORDER, reference_text_id: reference_text_one.id)}
 	
   context "Database Table Columns" do
 	it { is_expected.to have_db_column(:number).of_type(:string) }
 	it { is_expected.to have_db_column(:date).of_type(:string) }
-	#it { is_expected.to have_db_column(:text_type).of_type(:string) }
     it { is_expected.to have_db_column(:group).of_type(:string) }
     it { is_expected.to have_db_column(:library).of_type(:string) }
     it { is_expected.to have_db_column(:photo_link).of_type(:string) }
@@ -43,10 +42,6 @@ RSpec.describe Text, type: :model do
 		it "has a date" do 
 			expect(text_one.date).to eq(DATE)
 		end
-
-		# it "has a text type" do
-		# 	expect(text_one.text_type).to eq(TYPE)
-		# end
 
     it "has a group" do
 			expect(text_one.group).to eq(GROUP)
@@ -73,6 +68,13 @@ RSpec.describe Text, type: :model do
 			expect(text_one.reference_texts).to include(reference_text_two)
 			expect(text_one.references).to include(reference_one)
 			expect(text_one.references.length).to be(NUMBER_OF_REFERENCES)
+		end
+
+		it "has a WescottHort text-type through its reference_text" do
+			expect(text_one.reference_texts).to include(reference_text_one)
+			expect(westcott_hort.reference_text).to eq(reference_text_one)
+			expect(text_one.westcott_horts.length).to be(CHAPTER)
+			expect(text_one.reference_texts.first.westcott_hort.text_type).to include(TYPE)
 		end
 	end
 end
