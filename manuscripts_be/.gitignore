@@ -10,7 +10,8 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
-/db/seeds.rb
+/db/seeds/002_papyri.rb
+/db/raw_data/*
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -31,4 +32,3 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 coverage
-badge.svg
