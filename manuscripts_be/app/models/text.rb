@@ -10,12 +10,12 @@
 #  wiki_link  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  text_type  :string
 #  group      :string
 #
 class Text < ApplicationRecord
     has_many :reference_texts
     has_many :references, through: :reference_texts
+    has_many :westcott_horts, through: :reference_texts
     validates_presence_of  :number, :date, :group
 
     # scope :ten_texts, lambda { limit(10) }

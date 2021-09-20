@@ -10,6 +10,7 @@ NUMBER = "p39"
 DATE = "III"
 TYPE = "Alexandrian"
 GROUP = "Papyri"
+ORDER = "First"
 
 NUMBER_TWO = "424"
 DATE_TWO = "XI"

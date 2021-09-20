@@ -10,11 +10,10 @@
 #  wiki_link  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  text_type  :string
 #  group      :string
 #
 class TextSerializer < ActiveModel::Serializer
   attributes :id, :number, :date, :group, :library, :photo_link, :wiki_link
   has_many :reference_texts
-  has_many :references, through: :reference_texts
+  # has_many :references, through: :reference_texts
 end

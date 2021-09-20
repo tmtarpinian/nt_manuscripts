@@ -2,11 +2,11 @@
 #
 # Table name: reference_texts
 #
-#  id               :integer          not null, primary key
-#  text_id          :integer          not null
-#  reference_id     :integer          not null
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
+#  id           :integer          not null, primary key
+#  reference_id :integer
+#  text_id      :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 require 'rails_helper'
 
@@ -47,11 +47,9 @@ RSpec.describe ReferenceText, type: :model do
 			expect(text_reference.reference).to eq(reference)
 		end
 
-	# it "has one Wescott-Hort association" do
-    #   wh = WestcottHort.create(text_type: "Alexandrian", order: "first")
-	# 		text_reference.westcott_hort << wh
-	# 		expect(text_reference.westcott_hor).to eq(wh)
-	# 		expect(text_reference.westcott_hort.length).to be(1)
-	# 	end
+	it "has one Wescott-Hort association" do
+      	wh = WestcottHort.create(text_type: TYPE, order: ORDER, reference_text_id: text_reference.id)
+			expect(text_reference.westcott_hort).to eq(wh)
+		end
 	end
 end
