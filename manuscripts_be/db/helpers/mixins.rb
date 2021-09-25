@@ -17,4 +17,4 @@ module SeedMixins
         WestcottHort.create(reference_text_id: rf.id, text_type: type, order: order)
       end
     end
-  end
+end
