@@ -5,7 +5,7 @@ RSpec.describe NestleAland, type: :model do
 	let(:text){Text.create(number: NUMBER, date: DATE, group: GROUP)}
 	let(:reference){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
 	let(:text_reference){ReferenceText.create(text_id: text.id, reference_id: reference.id)}
-	let(:westcott_hort){NestleAland.create(text_type: TYPE, order: ORDER, reference_text_id: text_reference.id)}
+	let(:nestle_aland){NestleAland.create(text_type: TYPE, order: ORDER, reference_text_id: text_reference.id)}
 	
   context "Database Table Columns" do
     it { is_expected.to have_db_column(:created_at).of_type(:datetime) }
@@ -19,7 +19,7 @@ RSpec.describe NestleAland, type: :model do
 
 	context "Associations" do
 		it "belongs to a reference_text" do
-			expect(nestle_aland.text_reference).to eq(text_reference)
+			expect(nestle_aland.reference_text).to eq(text_reference)
 		end
 	end
 end
