@@ -62,6 +62,9 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  #Inherit FactoryBot Methods
+  config.include FactoryBot::Syntax::Methods
 end
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

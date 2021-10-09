@@ -16,12 +16,12 @@ require 'rails_helper'
 
 RSpec.describe Text, type: :model do
 	
-	let(:text_one){Text.create(number: NUMBER, date: DATE, group: GROUP)}
+	let(:text_one){create(:text)}
 	let(:reference_one){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
 	let(:reference_two){Reference.create(book: BOOK_TWO, chapter: CHAPTER_TWO, verse: VERSE_TWO)}
 	let(:reference_text_one) {ReferenceText.create(reference_id: reference_one.id, text_id: text_one.id)}
 	let(:reference_text_two) {ReferenceText.create(reference_id: reference_two.id, text_id: text_one.id)}
-	let(:westcott_hort) {WestcottHort.create(text_type: TYPE, order: ORDER, reference_text_id: reference_text_one.id)}
+	let(:nestle_aland) {NestleAland.create(text_type: TYPE, order: ORDER, reference_text_id: reference_text_one.id)}
 	
   context "Database Table Columns" do
 	it { is_expected.to have_db_column(:number).of_type(:string) }
@@ -70,11 +70,11 @@ RSpec.describe Text, type: :model do
 			expect(text_one.references.length).to be(NUMBER_OF_REFERENCES)
 		end
 
-		it "has a WescottHort text-type through its reference_text" do
+		it "has a NestleAland text-type through its reference_text" do
 			expect(text_one.reference_texts).to include(reference_text_one)
-			expect(westcott_hort.reference_text).to eq(reference_text_one)
-			expect(text_one.westcott_horts.length).to be(CHAPTER)
-			expect(text_one.reference_texts.first.westcott_hort.text_type).to include(TYPE)
+			expect(nestle_aland.reference_text).to eq(reference_text_one)
+			# expect(text_one.nestle_aland.length).to be(CHAPTER)
+			expect(text_one.reference_texts.first.nestle_aland.first.text_type).to include(TYPE)
 		end
 	end
 end
