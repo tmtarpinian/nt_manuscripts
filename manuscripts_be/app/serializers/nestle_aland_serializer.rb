@@ -9,7 +9,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
-class WestcottHortSerializer < ActiveModel::Serializer
-    attributes :id, :text_type, :order
+class NestleAlandSerializer < ActiveModel::Serializer
+    attributes :id, :text_type, :order, :edition
     belongs_to :reference_text
   end

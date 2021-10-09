@@ -9,6 +9,6 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
-class WestcottHort< ApplicationRecord
+class NestleAland< ApplicationRecord
     belongs_to :reference_text
 end
