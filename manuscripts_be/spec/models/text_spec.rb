@@ -74,7 +74,7 @@ RSpec.describe Text, type: :model do
 			expect(text_one.reference_texts).to include(reference_text_one)
 			expect(nestle_aland.reference_text).to eq(reference_text_one)
 			# expect(text_one.nestle_aland.length).to be(CHAPTER)
-			expect(text_one.reference_texts.first.nestle_aland.first.text_type).to include(TYPE)
+			expect(text_one.reference_texts.first.nestle_alands.first.text_type).to include(TYPE)
 		end
 	end
 end

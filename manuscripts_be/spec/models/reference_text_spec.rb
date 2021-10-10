@@ -12,7 +12,7 @@ require 'rails_helper'
 
 RSpec.describe ReferenceText, type: :model do
   
-	let(:text){Text.create(number: NUMBER, date: DATE, group: GROUP)}
+	let(:text){create(:text)}
 	let(:reference){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
   	let(:text_reference){ReferenceText.create(text_id: text.id, reference_id: reference.id)}
 	
@@ -47,9 +47,9 @@ RSpec.describe ReferenceText, type: :model do
 			expect(text_reference.reference).to eq(reference)
 		end
 
-	it "has one Wescott-Hort association" do
-      	wh = WestcottHort.create(text_type: TYPE, order: ORDER, reference_text_id: text_reference.id)
-			expect(text_reference.westcott_hort).to eq(wh)
+	it "has a Nestle-Aland association" do
+      	wh = NestleAland.create(text_type: TYPE, order: ORDER, reference_text_id: text_reference.id)
+			expect(text_reference.nestle_alands.first).to eq(wh)
 		end
 	end
 end
