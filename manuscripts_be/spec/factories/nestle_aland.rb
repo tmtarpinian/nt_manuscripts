@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 FactoryBot.define do
     factory :nestle_aland, class: 'NestleAland' do
         text_type { TYPE }

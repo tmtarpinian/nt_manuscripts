@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 FactoryBot.define do
     factory :reference, class: 'Reference' do
         book { BOOK }

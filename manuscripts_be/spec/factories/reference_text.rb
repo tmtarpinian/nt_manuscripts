@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 FactoryBot.define do
     factory :reference_text, class: 'ReferenceText' do
         text_id { text.id }
