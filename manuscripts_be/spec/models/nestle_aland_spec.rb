@@ -5,7 +5,7 @@ RSpec.describe NestleAland, type: :model do
 	let(:text){create(:text)}
 	let(:reference){create(:new_reference)}
 	let(:text_reference){create(:reference_text)}
-	let(:nestle_aland){NestleAland.create(text_type: TYPE, order: ORDER, reference_text_id: text_reference.id)}
+	let(:nestle_aland){create(:nestle_aland)}
 	
   context "Database Table Columns" do
     it { is_expected.to have_db_column(:created_at).of_type(:datetime) }
