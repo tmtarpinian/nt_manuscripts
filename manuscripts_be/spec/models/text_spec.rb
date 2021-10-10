@@ -17,8 +17,8 @@ require 'rails_helper'
 RSpec.describe Text, type: :model do
 	
 	let(:text_one){create(:text)}
-	let(:reference_one){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
-	let(:reference_two){Reference.create(book: BOOK_TWO, chapter: CHAPTER_TWO, verse: VERSE_TWO)}
+	let(:reference_one){create(:reference)}
+	let(:reference_two){create(:second_reference)}
 	let(:reference_text_one) {ReferenceText.create(reference_id: reference_one.id, text_id: text_one.id)}
 	let(:reference_text_two) {ReferenceText.create(reference_id: reference_two.id, text_id: text_one.id)}
 	let(:nestle_aland) {NestleAland.create(text_type: TYPE, order: ORDER, reference_text_id: reference_text_one.id)}

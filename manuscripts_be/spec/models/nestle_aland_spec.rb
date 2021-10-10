@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe NestleAland, type: :model do
   
 	let(:text){create(:text)}
-	let(:reference){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
+	let(:reference){create(:reference)}
 	let(:text_reference){ReferenceText.create(text_id: text.id, reference_id: reference.id)}
 	let(:nestle_aland){NestleAland.create(text_type: TYPE, order: ORDER, reference_text_id: text_reference.id)}
 	

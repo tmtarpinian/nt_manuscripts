@@ -12,4 +12,4 @@ FactoryBot.define do
         date{ DATE_TWO }
         group { GROUP_TWO } 
     end
-  end
+end

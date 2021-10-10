@@ -14,8 +14,8 @@ require 'rails_helper'
 RSpec.describe Reference, type: :model do
 	
 	let(:text_one){create(:text)}
-	let(:reference_one){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
 	let(:text_two){create(:second_text)}
+	let(:reference_one){create(:reference)}
 	let(:reference_text_one) {ReferenceText.create(reference_id: reference_one.id, text_id: text_one.id)}
 	let(:reference_text_two) {ReferenceText.create(reference_id: reference_one.id, text_id: text_two.id)}
 	

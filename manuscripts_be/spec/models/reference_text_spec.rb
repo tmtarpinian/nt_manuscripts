@@ -13,7 +13,7 @@ require 'rails_helper'
 RSpec.describe ReferenceText, type: :model do
   
 	let(:text){create(:text)}
-	let(:reference){Reference.create(book: BOOK, chapter: CHAPTER, verse: VERSE)}
+	let(:reference){create(:reference)}
   	let(:text_reference){ReferenceText.create(text_id: text.id, reference_id: reference.id)}
 	
   context "Database Table Columns" do
