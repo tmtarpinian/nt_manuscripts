@@ -1,14 +1,19 @@
 # == Schema Information
 #
-# Table name: westcott_horts
+# Table name: nestle_alands
 #
 #  id                :integer          not null, primary key
-#  text_type         :string
+#  edition           :integer
 #  order             :string
-#  reference_text_id :integer
+#  text_type         :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  reference_text_id :integer
 #
-class WestcottHort< ApplicationRecord
+# Indexes
+#
+#  index_nestle_alands_on_reference_text_id  (reference_text_id)
+#
+class NestleAland< ApplicationRecord
     belongs_to :reference_text
 end
