@@ -1,13 +1,33 @@
 class Constants
 
-    ALEXANDRIAN_TEXT_TYPE = "Alexandrian"
-    WESTERN_TEXT_TYPE = "Western"
-    BYZANTINE_TEXT_TYPE = "Byzantine"
-    OTHER_TEXT_TYPE = "Other"
+    ALEXANDRIAN_TEXT_TYPE = "alexandrian"
+    WESTERN_TEXT_TYPE = "western"
+    BYZANTINE_TEXT_TYPE = "byzantine"
+    OTHER_TEXT_TYPE = "other"
+    MIXED_TEXT_TYPE = "mixed"
 
-    CONSISTENTLY_CITED = "consistently"
-    FREQUENTLY_CITED = "frequently"
-    OCCASSIONALLY_CITED = "occassionally"
+    CITATION_DEFINITIONS = {
+      CONSISTENTLY_CITED: "consistently cited",
+      FREQUENTLY_CITED: "frequently cited",
+      OCCASSIONALLY_CITED: "occassionally cited",
+      CONSTANT_WITNESS: "constant witness"
+    }
+
+    CITATION_VALUE = {
+      FIRST_ORDER: "first order",
+      SECOND_ORDER: "second order"
+    }
+
+    WITNESS_FAMILIES = {
+      FAMILY_ONE: 1,
+      FAMILY_THIRTEEN: 13
+    }
+
+    NESTLE_ALAND_VERSIONS = {
+      ALL_VERSIONS: [26, 27, 28],
+      MOST_RECENT_TWO_VERSIONS: [27, 28],
+      MOST_RECENT_VERSION: [28]
+    }
 
     GOSPELS = [
       1,

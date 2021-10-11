@@ -2,13 +2,15 @@
 #
 # Table name: nestle_alands
 #
-#  id                :integer          not null, primary key
-#  edition           :integer
-#  order             :string
-#  text_type         :string
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  reference_text_id :integer
+#  id                 :integer          not null, primary key
+#  citation_frequency :string
+#  edition            :integer
+#  family             :integer
+#  order              :string
+#  text_type          :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  reference_text_id  :integer
 #
 # Indexes
 #
@@ -29,6 +31,8 @@ RSpec.describe NestleAland, type: :model do
 	it { is_expected.to have_db_column(:reference_text_id).of_type(:integer) }
     it { is_expected.to have_db_column(:text_type).of_type(:string) }
     it { is_expected.to have_db_column(:order).of_type(:string) }
+	it { is_expected.to have_db_column(:citation_frequency).of_type(:string) }
+	it { is_expected.to have_db_column(:family).of_type(:integer) }
 	it { is_expected.to have_db_column(:edition).of_type(:integer) }
 	it { is_expected.to have_db_index(:reference_text_id) }
   end
