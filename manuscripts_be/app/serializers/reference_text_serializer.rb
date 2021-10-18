@@ -14,8 +14,8 @@
 #  index_reference_texts_on_text_id       (text_id)
 #
 class ReferenceTextSerializer < ActiveModel::Serializer
-    attributes :id, :reference, :westcott_hort, :text
+    attributes :id, :reference, :text, :nestle_alands
     belongs_to :reference
     belongs_to :text
-    has_one :westcott_hort
+    has_many :nestle_alands
   end

@@ -6,6 +6,7 @@ class CreateNestleAland < ActiveRecord::Migration[6.1]
       t.string :order
       t.integer :family
       t.integer :edition
+      t.boolean :defective, default: false, null: false
       t.belongs_to :reference_text
 
       t.timestamps
