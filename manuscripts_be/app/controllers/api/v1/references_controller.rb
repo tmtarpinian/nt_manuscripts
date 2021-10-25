@@ -1,5 +1,5 @@
 class Api::V1::ReferencesController < ApplicationController
-    before_action :set_reference, only: [:show]
+    before_action :find_reference, only: [:show]
 
     def index
         references = Reference.all
@@ -18,8 +18,16 @@ class Api::V1::ReferencesController < ApplicationController
 
     private
 
-    def set_reference(book = params[:book], chapter=params[:chapter], verse=params[:verse])
+    def find_reference
+        params[:id] ? find_reference_by_id : find_reference_by_full_params
+    end
+
+    def find_reference_by_full_params(book = params[:book], chapter=params[:chapter], verse=params[:verse])
         @reference = Reference.find_by(book: book, chapter: chapter, verse: verse)
+    end
+
+    def find_reference_by_id
+        @reference = Reference.find(params[:id])
     end
 
      def reference_params
