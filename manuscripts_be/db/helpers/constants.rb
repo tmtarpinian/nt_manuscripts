@@ -28,15 +28,16 @@ class Constants
     WITNESS_GROUPS = {
       UNCIAL: "Uncial",
       MINUSCULE: "Minuscule",
-      PAPYRI: "Papyir",
+      PAPYRI: "Papyri",
       LECTIONARY: "Lectionary",
       VERSION: "Version"
     }
 
     NESTLE_ALAND_VERSIONS = {
       ALL_VERSIONS: [26, 27, 28],
-      MOST_RECENT_TWO_VERSIONS: [27, 28],
-      MOST_RECENT_VERSION: [28]
+      SIX_AND_SEVEN: [26, 27],
+      SEVEN_AND_EIGHT: [27, 28],
+      EIGHT: [28]
     }
 
     GOSPELS = [
