@@ -1146,7 +1146,7 @@ print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
 text = Text.find_or_create_by(number: '2495', date: 'XV', group: group)
-associate_to_nestle_aland(txt: text, array_of_integers: Constants::GOSPELS, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
+associate_to_nestle_aland(txt: text, array_of_integers: MinTwentyFourHundredNinetyFive::GOSPELS, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 associate_to_nestle_aland(txt: text, array_of_integers: Constants::APOSTOLOS, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 associate_to_nestle_aland(txt: text, array_of_integers: Constants::PAUL, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 associate_to_nestle_aland(txt: text, array_of_integers: Constants::REVELATION, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
@@ -1160,7 +1160,7 @@ print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
 text = Text.find_or_create_by(number: '2542', date: 'XIII', group: group)
-associate_to_nestle_aland(txt: text, array_of_integers: Constants::MATTHEW, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
+associate_to_nestle_aland(txt: text, array_of_integers: MinTwentyFiveFortyTwo::MATTHEW, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 associate_to_nestle_aland(txt: text, array_of_integers: Constants::MARK, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 associate_to_nestle_aland(txt: text, array_of_integers: MinTwentyFiveFortyTwo::LUKE, type: nil, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)

@@ -19,4 +19,19 @@ class Text < ApplicationRecord
     validates_presence_of  :number, :date, :group
 
     # scope :ten_texts, lambda { limit(10) }
+    # scope :in_print, -> { where(out_of_print: false) }
+    scope :papyri, -> { where(group: "Papyri") }
+    scope :uncials, -> { where(group: "Uncial") }
+    scope :minuscules, -> { where(group: "Minuscule") }
+
+    attr_accessor :total_verses, :coverage
+
+    def total_verses
+        @total_verses ||= references.length
+    end
+
+    def nt_coverage
+        @coverage ||= (total_verses.to_f / 7958).round(3) # TODO: Add this to constants. Use this to avoid running Reference.all.length each time we need this number
+    end
+
 end
