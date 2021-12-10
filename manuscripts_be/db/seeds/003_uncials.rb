@@ -59,7 +59,7 @@ print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '09', date: 'IX', group: group)
-associate_to_nestle_aland(txt:text, array_of_integers: Constants::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+associate_to_nestle_aland(txt:text, array_of_integers: ZeroNine::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
@@ -69,7 +69,7 @@ print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '011', date: 'IX', group: group)
-associate_to_nestle_aland(txt:text, array_of_integers: Constants::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+associate_to_nestle_aland(txt:text, array_of_integers: Eleven::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
@@ -231,10 +231,10 @@ text = Text.find_or_create_by(number: '040', date: 'VI', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: Forty::LUKE, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '041', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Fifteen::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '041', date: 'IX', group: group)  # TODO: Family Pi
+associate_to_nestle_aland(txt:text, array_of_integers: FortyOne::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '042', date: 'VI', group: group)
@@ -258,20 +258,20 @@ associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Co
 associate_to_nestle_aland(txt:text, array_of_integers: FortyFour::CATHOLIC, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '045', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Fifteen::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '045', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: FortyFive::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '046', date: 'X', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: Constants::REVELATION, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '047', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Fifteen::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '047', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: FortySeven::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '048', date: 'IX', group: group)
@@ -297,20 +297,20 @@ text = Text.find_or_create_by(number: '051', date: 'X', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: FiftyOne::REVELATION, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '052', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::APOSTOLOS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '052', date: 'X', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: FiftyTwo::REVELATION, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '053', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Fifteen::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '053', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: FiftyThree::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '054', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Fifteen::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '054', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: FiftyFour::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 # start_time = get_timestamp        
 # text = Text.find_or_create_by(number: '055', date: 'IX', group: group)
@@ -322,10 +322,10 @@ print_time_elapsed(text, start_time, group)
 # associate_to_nestle_aland(txt:text, array_of_integers: Fifteen::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 # print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '057', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::APOSTOLOS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '057', date: 'IV/V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: FiftySeven::APOSTOLOS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '058', date: 'IV', group: group)
@@ -342,30 +342,32 @@ text = Text.find_or_create_by(number: '060', date: 'VI', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: Sixty::JOHN, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '061', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::APOSTOLOS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '061', date: 'V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: SixtyOne::PAUL, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '062', date: 'V', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: SixtyTwo::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '063', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::APOSTOLOS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '063', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: SixtyThree::LUKE, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+associate_to_nestle_aland(txt:text, array_of_integers: SixtyThree::JOHN, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '064', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Fifteen::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '064', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: SixtyFour::MATTHEW, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+associate_to_nestle_aland(txt:text, array_of_integers: SixtyFour::MARK, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '065', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::APOSTOLOS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '065', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: SixtyFive::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '066', date: 'VI', group: group)
@@ -425,9 +427,9 @@ associate_to_nestle_aland(txt:text, array_of_integers: SeventySix::APOSTOLOS, ty
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '077', date: 'V/VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: SeventySix::APOSTOLOS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+text = Text.find_or_create_by(number: '077', date: 'V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: SeventySeven::ACTS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '078', date: 'VI', group: group)
@@ -439,10 +441,10 @@ text = Text.find_or_create_by(number: '079', date: 'VI', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: SeventyNine::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '080', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: SeventyNine::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '080', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: Eighty::MARK, type: Constants::OTHER_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 # start_time = get_timestamp        
 # text = Text.find_or_create_by(number: '081', date: 'VI', group: group)
@@ -504,10 +506,11 @@ print_time_elapsed(text, start_time, group)
 # associate_to_nestle_aland(txt:text, array_of_integers: NinetyOne::GOSPELS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 # print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '093', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: NinetyOne::GOSPELS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '093', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: NinetyThree::ACTS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+associate_to_nestle_aland(txt:text, array_of_integers: NinetyThree::CATHOLIC, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '094', date: 'VI', group: group)
@@ -547,6 +550,16 @@ print_time_elapsed(text, start_time, group)
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0102', date: 'VII', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: HundredTwo::GOSPELS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp   
+text = Text.find_or_create_by(number: '0103', date: 'VII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredThree::MARK, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp   
+text = Text.find_or_create_by(number: '0104', date: 'VII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredFour::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
@@ -604,30 +617,30 @@ text = Text.find_or_create_by(number: '0115', date: 'IX/X', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: HundredFifteen::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0116', date: 'VIII', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: NinetyEight::APOSTOLOS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0116', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredSixteen::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 # start_time = get_timestamp        
 # text = Text.find_or_create_by(number: '0117', date: 'VIII', group: group)
 # associate_to_nestle_aland(txt:text, array_of_integers: NinetyEight::APOSTOLOS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 # print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0118', date: 'VIII', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: NinetyEight::APOSTOLOS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0118', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredEighteen::MATTHEW, type: Constants::OTHER_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 # start_time = get_timestamp        
 # text = Text.find_or_create_by(number: '0119', date: 'VIII', group: group)
 # associate_to_nestle_aland(txt:text, array_of_integers: NinetyEight::APOSTOLOS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 # print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0120', date: 'VIII', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: NinetyEight::APOSTOLOS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0120', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredTwenty::ACTS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0121', date: 'X', group: group)
@@ -676,25 +689,26 @@ text = Text.find_or_create_by(number: '0132', date: 'IX', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyTwo::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0133', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyTwo::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0133', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyThree::MATTHEW, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyThree::MARK, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0134', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyTwo::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0134', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyFour::MARK, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0135', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyTwo::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0135', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyFive::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0136', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtyTwo::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0136', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredThirtySix::MATTHEW, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0140', date: 'X', group: group)
@@ -703,7 +717,7 @@ print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0141', date: 'X', group: group)
-associate_to_nestle_aland(txt:text, array_of_integers: HundredFortyOne::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
+associate_to_nestle_aland(txt:text, array_of_integers: HundredFortyOne::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SEVEN_AND_EIGHT])
 print_time_elapsed(text, start_time, group)
 
 # start_time = get_timestamp        
@@ -743,7 +757,7 @@ print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0150', date: 'IX', group: group)
-associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
+associate_to_nestle_aland(txt:text, array_of_integers: HundredFifty::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SEVEN_AND_EIGHT])
 print_time_elapsed(text, start_time, group)
 
 # start_time = get_timestamp        
@@ -756,15 +770,15 @@ print_time_elapsed(text, start_time, group)
 # associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 # print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0155', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0155', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredFiftyFive::LUKE, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0156', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0156', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredFiftySix::CATHOLIC, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 # start_time = get_timestamp        
 # text = Text.find_or_create_by(number: '0157', date: 'IX', group: group)
@@ -776,10 +790,10 @@ print_time_elapsed(text, start_time, group)
 # associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 # print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0159', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0159', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredFiftyNine::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0160', date: 'IV/V', group: group)
@@ -801,20 +815,20 @@ text = Text.find_or_create_by(number: '0163', date: 'V', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: HundredSixtyThree::REVELATION, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0164', date: 'V', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredSixtyThree::REVELATION, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0164', date: 'VI/VII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredSixtyFour::MATTHEW, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0165', date: 'V', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: HundredSixtyFive::APOSTOLOS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0166', date: 'V', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredSixtyThree::REVELATION, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0166', date: 'V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredSixtySix::APOSTOLOS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0167', date: 'VII', group: group)
@@ -846,15 +860,15 @@ text = Text.find_or_create_by(number: '0172', date: 'V', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: HundredSeventyTwo::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0173', date: 'ca. 300', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredSeventyOne::GOSPELS, type: Constants::WESTERN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0173', date: 'V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredSeventyThree::CATHOLIC, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0174', date: 'ca. 300', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredSeventyOne::GOSPELS, type: Constants::WESTERN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0174', date: 'V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredSeventyFour::PAUL, type: Constants::OTHER_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0175', date: 'V', group: group)
@@ -916,15 +930,15 @@ text = Text.find_or_create_by(number: '0189', date: 'II/III', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: HundredEightyNine::APOSTOLOS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp     
-# text = Text.find_or_create_by(number: '0196', date: 'VI', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredEightySeven::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp     
+text = Text.find_or_create_by(number: '0196', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredNinetySix::GOSPELS, type: Constants::OTHER_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp    
-# text = Text.find_or_create_by(number: '0197', date: 'VI/VII', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: HundredEightySeven::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp    
+text = Text.find_or_create_by(number: '0197', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: HundredNinetySeven::MATTHEW, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0198', date: 'VI', group: group)
@@ -936,10 +950,10 @@ text = Text.find_or_create_by(number: '0199', date: 'VI/VII', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: HundredNinetyNine::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0200', date: 'VII', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: TwoHundred::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0200', date: 'VII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundred::MATTHEW, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0201', date: 'V', group: group)
@@ -951,10 +965,10 @@ text = Text.find_or_create_by(number: '0204', date: 'VII', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFour::GOSPELS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0206', date: 'VII', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: TwoHundred::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0206', date: 'IV', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSix::CATHOLIC, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0207', date: 'VII', group: group)
@@ -981,10 +995,10 @@ text = Text.find_or_create_by(number: '0211', date: 'IX', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: Constants::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:EIGHT])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp        
-# text = Text.find_or_create_by(number: '0212', date: 'IX', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: Constants::GOSPELS, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp        
+text = Text.find_or_create_by(number: '0212', date: 'III', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredTwelve::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp        
 text = Text.find_or_create_by(number: '0213', date: 'V/VI', group: group)
@@ -1071,16 +1085,16 @@ text = Text.find_or_create_by(number: '0231', date: 'IV', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredThirtyOne::MATTHEW, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp
-# text = Text.find_or_create_by(number: '0232', date: 'III', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredThirty::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0232', date: 'V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredThirtyTwo::CATHOLIC, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 
-# start_time = get_timestamp
-# text = Text.find_or_create_by(number: '0233', date: 'III', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredThirty::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0233', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: Constants::GOSPELS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 
 start_time = get_timestamp
@@ -1134,20 +1148,20 @@ text = Text.find_or_create_by(number: '0244', date: 'V', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFortyFour::ACTS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp
-# text = Text.find_or_create_by(number: '0245', date: 'V', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFortyFive::ACTS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0245', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFortyFive::ACTS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp
-# text = Text.find_or_create_by(number: '0246', date: 'V', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFortySix::ACTS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0246', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFortySix::CATHOLIC, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
-# start_time = get_timestamp
-# text = Text.find_or_create_by(number: '0247', date: 'V', group: group)
-# associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFortySeven::ACTS, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
-# print_time_elapsed(text, start_time, group)
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0247', date: 'V/VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFortySeven::CATHOLIC, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
 
 # start_time = get_timestamp
 # text = Text.find_or_create_by(number: '0248', date: 'V', group: group)
@@ -1160,13 +1174,38 @@ associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFortyNine::MATT
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
+text = Text.find_or_create_by(number: '0250', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: Constants::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
 text = Text.find_or_create_by(number: '0252', date: 'V', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFiftyTwo::CATHOLIC, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
+text = Text.find_or_create_by(number: '0253', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFiftyThree::LUKE, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
 text = Text.find_or_create_by(number: '0254', date: 'V', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFiftyFour::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0255', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFiftyFive::MATTHEW, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0256', date: 'VIII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFiftySix::JOHN, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0259', date: 'VII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFiftyNine::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
@@ -1185,8 +1224,33 @@ associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSixtyTwo::PAUL,
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
+text = Text.find_or_create_by(number: '0263', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSixtyThree::MARK, type: Constants::OTHER_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0264', date: 'V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSixtyFour::JOHN, type: Constants::OTHER_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0265', date: 'VI', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSixtyFive::LUKE, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
 text = Text.find_or_create_by(number: '0266', date: 'VI', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSixtySix::LUKE, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0267', date: 'V', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSixtySeven::LUKE, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0268', date: 'VII', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSixtyEight::JOHN, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
@@ -1202,6 +1266,16 @@ print_time_elapsed(text, start_time, group)
 start_time = get_timestamp
 text = Text.find_or_create_by(number: '0271', date: 'IX', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSeventyOne::MATTHEW, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0272', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSeventyTwo::LUKE, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+print_time_elapsed(text, start_time, group)
+
+start_time = get_timestamp
+text = Text.find_or_create_by(number: '0273', date: 'IX', group: group)
+associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredSeventyThree::JOHN, type: Constants::BYZANTINE_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
 print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
