@@ -2,11 +2,13 @@
 #
 # Table name: reference_texts
 #
-#  id           :integer          not null, primary key
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  reference_id :integer
-#  text_id      :integer
+#  id              :integer          not null, primary key
+#  translation     :string
+#  transliteration :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  reference_id    :integer
+#  text_id         :integer
 #
 # Indexes
 #
