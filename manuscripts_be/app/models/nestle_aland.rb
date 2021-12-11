@@ -2,13 +2,15 @@
 #
 # Table name: nestle_alands
 #
-#  id                :integer          not null, primary key
-#  edition           :integer
-#  order             :string
-#  text_type         :string
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  reference_text_id :integer
+#  id                 :integer          not null, primary key
+#  citation_frequency :string
+#  edition            :integer
+#  family             :integer
+#  order              :string
+#  text_type          :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  reference_text_id  :integer
 #
 # Indexes
 #

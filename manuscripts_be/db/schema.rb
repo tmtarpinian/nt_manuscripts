@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_19_174242) do
+ActiveRecord::Schema.define(version: 2021_12_07_015731) do
 
   create_table "nestle_alands", force: :cascade do |t|
     t.string "text_type"
+    t.string "citation_frequency"
     t.string "order"
+    t.integer "family"
     t.integer "edition"
     t.integer "reference_text_id"
     t.datetime "created_at", precision: 6, null: false
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_09_19_174242) do
     t.integer "text_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "translation"
+    t.string "transliteration"
     t.index ["reference_id"], name: "index_reference_texts_on_reference_id"
     t.index ["text_id"], name: "index_reference_texts_on_text_id"
   end

@@ -18,4 +18,4 @@ Dir[Rails.root.join('db/seeds/*.rb')].sort.each do |file|
 end
 
 stop = get_timestamp
-puts "Total seeding: #{((stop-start).to_f/60).round(2)} minutes (#{stop-start} seconds)"
+puts "Total seeding: #{((stop-start).to_f)/3600.round(2)} hours"
