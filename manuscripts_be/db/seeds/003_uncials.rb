@@ -1178,6 +1178,11 @@ text = Text.find_or_create_by(number: '0250', date: 'VIII', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: Constants::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
 print_time_elapsed(text, start_time, group)
 
+# start_time = get_timestamp
+# text = Text.find_or_create_by(number: '0251', date: 'VIII', group: group)
+# associate_to_nestle_aland(txt:text, array_of_integers: Constants::GOSPELS, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:SIX_AND_SEVEN])
+# print_time_elapsed(text, start_time, group)
+
 start_time = get_timestamp
 text = Text.find_or_create_by(number: '0252', date: 'V', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredFiftyTwo::CATHOLIC, type: Constants::MIXED_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS])
