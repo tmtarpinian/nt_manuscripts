@@ -3,6 +3,7 @@
 # Table name: reference_texts
 #
 #  id              :integer          not null, primary key
+#  date            :string
 #  translation     :string
 #  transliteration :string
 #  created_at      :datetime         not null

@@ -12,12 +12,13 @@ namespace :transliteration_parser do
 
     f = File.open(file, "r")
     f.each_line do |line|
-      verse_arrays = line.split("}}")  ## breaks up the text file into arrays of verses     
+      verse_arrays = line.split("}}")  ## breaks up the text file into arrays of verses
+      # binding.pry
       verse_arrays.each do |verse_array|
-
-        verse_header = verse_array.scan(/verse.+verse/)[0]
+        
+        verse_header = verse_array.scan(/break.+break/)[0]
         manuscripts = verse_array.split(verse_header)[1] # removes the verse from the first array
-        verse_data = verse_header.split("verse")[1]
+        verse_data = verse_header.split("break")[1]
         transliterations_added[verse_data] = []
         book, chapter, verse = verse_data.split(".")    # Destructure array to variables
         book = book.titleize
@@ -25,27 +26,28 @@ namespace :transliteration_parser do
         translation_arrays = manuscripts.split("u003ct").map{|row| row.split("\\u003c/t\\")[0]}
         
         translation_arrays.each do |row|
-          transliteration = row.split("u003e")[1]
-          next if transliteration == nil
+          transliteration_value = row.split("u003e")[1]
+          next if transliteration_value == nil
 
           #strip string of initial non-alphanumeric chars
-          strip_initial_nonalphanumeric(transliteration)
+          strip_initial_nonalphanumeric(transliteration_value)
 
           witness = format_witness(row)
 
-          found_text = Text.find_by(number: witness)
+          found_text = Text.find_by(ga_number: witness)
            if found_text
             rt = ReferenceText.find_by(reference_id: reference.id, text_id: found_text.id)
             if rt
-              begin
-              rt.update!(transliteration: text)
+              # begin
+                # binding.pry
+              rt.update(transliteration: transliteration_value)
               transliterations_added[verse_data].push(witness)
-              rescue => e
-                print "\e[1;31m Update failed \e[0m"
-                print "\e[1;31m #{e} \e[0m"
-              end
+              # rescue => e
+              #   print "\e[1;31m Update failed \e[0m"
+              #   print "\e[1;31m #{e} \e[0m"
+              # end
             else
-              reference_text_not_found.push({found_text: verse_data})
+              reference_text_not_found.push(verse_data + " for: " + found_text.ga_number)
             end
            else
             text_not_found.push(witness)
@@ -55,7 +57,7 @@ namespace :transliteration_parser do
     end
     f.close
 
-    print_summary(transliterations_added, text_not_found)
+    print_summary(transliterations_added, text_not_found, reference_text_not_found)
   end
 
   #helpers
@@ -74,13 +76,12 @@ namespace :transliteration_parser do
     witness = witness.split("").map{|digit| digit.downcase }.join("") #downcase all chars in the name
   end
 
-  def print_summary(transliterations_added, text_not_found)
-    print "Reporting Successes..."
+  def print_summary(transliterations_added, text_not_found, reference_text_not_found)
+    print "\e[33m Reporting Successes... \e[0m\n"
     print "#{transliterations_added}"
-    print "\e[1;31m Reporting #{text_not_found.uniq.length} Texts not found...\e[0m"
+    print "\e[31m Reporting #{text_not_found.uniq.length} Texts not found...\e[0m"
     print text_not_found.uniq
-    print "\e[1;31m Reporting #{reference_text_not_found.length} Texts not found...\e[0m"
+    print "\e[31m Reporting #{reference_text_not_found.length} ReferenceTexts not found...\e[0m"
     print reference_text_not_found
   end
-
 end

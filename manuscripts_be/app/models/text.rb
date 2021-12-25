@@ -3,20 +3,20 @@
 # Table name: texts
 #
 #  id         :integer          not null, primary key
-#  number     :string
-#  date       :string
+#  ga_number  :string
+#  group      :string
 #  library    :string
 #  photo_link :string
+#  vs_number  :string
 #  wiki_link  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  group      :string
 #
 class Text < ApplicationRecord
     has_many :reference_texts
     has_many :references, through: :reference_texts
     has_many :westcott_horts, through: :reference_texts
-    validates_presence_of  :number, :date, :group
+    validates_presence_of :group
 
     # scope :ten_texts, lambda { limit(10) }
     # scope :in_print, -> { where(out_of_print: false) }
