@@ -3,6 +3,7 @@
 # Table name: reference_texts
 #
 #  id              :integer          not null, primary key
+#  date            :string
 #  translation     :string
 #  transliteration :string
 #  created_at      :datetime         not null
@@ -26,6 +27,7 @@ RSpec.describe ReferenceText, type: :model do
   context "Database Table Columns" do
     it { is_expected.to have_db_column(:created_at).of_type(:datetime) }
     it { is_expected.to have_db_column(:updated_at).of_type(:datetime) }
+	it { is_expected.to have_db_column(:date).of_type(:string) }
 	it { is_expected.to have_db_column(:transliteration) }
 	it { is_expected.to have_db_column(:translation) }
 	it { is_expected.to have_db_column(:reference_id) }
@@ -44,6 +46,10 @@ RSpec.describe ReferenceText, type: :model do
 		xit "has a unique foreign key combination" do
 			text_reference_two.attributes={text_id: text.id, reference_id: reference.id}
 			expect(text_reference_two).not_to be_valid
+		end
+
+		xit "has a date" do
+			it { should validate_presence_of(:date) }
 		end
 	end
 
