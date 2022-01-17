@@ -14,8 +14,10 @@ module SeedMixins
     array_of_integers.each do | num |
       ref = Reference.find(num)
       rt = ReferenceText.create(text_id: txt.id, reference_id: ref.id, date: date)
-      editions.each do |edition|
-          NestleAland.create(reference_text_id: rt.id, text_type: type, edition: edition)
+      if editions != nil
+        editions.each do |edition|
+            NestleAland.create(reference_text_id: rt.id, text_type: type, edition: edition)
+        end
       end
     end
   end
