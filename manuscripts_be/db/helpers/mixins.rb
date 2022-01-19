@@ -10,7 +10,7 @@ module SeedMixins
     print "\e[32m Processed #{group_name} #{txt.ga_number} successfully (#{((ending_time-starting_time).to_f/60).round(2)} minutes / #{ending_time-starting_time} seconds)\e[0m\n"
   end
     
-  def associate_to_nestle_aland(txt:, array_of_integers:, type: nil, editions:, date:)
+  def associate_to_nestle_aland(txt:, array_of_integers:, type: nil, editions: nil, date:)
     array_of_integers.each do | num |
       ref = Reference.find(num)
       rt = ReferenceText.create(text_id: txt.id, reference_id: ref.id, date: date)
