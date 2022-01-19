@@ -23,8 +23,16 @@ class Text < ApplicationRecord
     scope :papyri, -> { where(group: "Papyri") }
     scope :uncials, -> { where(group: "Uncial") }
     scope :minuscules, -> { where(group: "Minuscule") }
+    scope :papyri_input, -> { (where(group: "Papyri").count.to_f / 141.to_f).round(2)}
+    scope :uncials_input, -> { (where(group: "Uncial").count.to_f / 324.to_f).round(2)}
+    scope :minuscules_input, -> { (where(group: "Minuscule").count.to_f / 2999.to_f).round(2)}
+
 
     attr_accessor :total_verses, :coverage
+
+    def transliterations
+        @transliterations ||= reference_texts.where.not(transliteration: nil).pluck(:id, :transliteration)
+    end
 
     def total_verses
         @total_verses ||= references.length
