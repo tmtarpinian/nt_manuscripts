@@ -4,6 +4,7 @@
 #
 #  id                 :integer          not null, primary key
 #  citation_frequency :string
+#  defective          :boolean          default(FALSE), not null
 #  edition            :integer
 #  family             :integer
 #  order              :string
