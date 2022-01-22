@@ -3,17 +3,17 @@
 # Table name: texts
 #
 #  id         :integer          not null, primary key
-#  number     :string
-#  date       :string
+#  ga_number  :string
+#  group      :string
 #  library    :string
 #  photo_link :string
+#  vs_number  :string
 #  wiki_link  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  group      :string
 #
 class TextSerializer < ActiveModel::Serializer
-  attributes :id, :number, :date, :group, :library, :photo_link, :wiki_link
+  attributes :id, :ga_number, :group, :library, :photo_link, :wiki_link
   has_many :reference_texts
   # has_many :references, through: :reference_texts
 end

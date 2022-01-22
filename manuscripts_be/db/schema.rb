@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_015731) do
     t.string "order"
     t.integer "family"
     t.integer "edition"
+    t.boolean "defective", default: false, null: false
     t.integer "reference_text_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_015731) do
   create_table "reference_texts", force: :cascade do |t|
     t.integer "reference_id"
     t.integer "text_id"
+    t.string "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "translation"
@@ -44,14 +46,14 @@ ActiveRecord::Schema.define(version: 2021_12_07_015731) do
   end
 
   create_table "texts", force: :cascade do |t|
-    t.string "number"
-    t.string "date"
+    t.string "ga_number"
+    t.string "vs_number"
+    t.string "group"
     t.string "library"
     t.string "photo_link"
     t.string "wiki_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "group"
   end
 
 end

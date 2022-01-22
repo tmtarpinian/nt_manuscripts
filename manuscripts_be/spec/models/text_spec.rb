@@ -3,14 +3,14 @@
 # Table name: texts
 #
 #  id         :integer          not null, primary key
-#  number     :string
-#  date       :string
+#  ga_number  :string
+#  group      :string
 #  library    :string
 #  photo_link :string
+#  vs_number  :string
 #  wiki_link  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  group      :string
 #
 require 'rails_helper'
 
@@ -24,8 +24,8 @@ RSpec.describe Text, type: :model do
 	let(:nestle_aland) {NestleAland.create(text_type: TYPE, order: ORDER, reference_text_id: reference_text_one.id)}
 	
   context "Database Table Columns" do
-	it { is_expected.to have_db_column(:number).of_type(:string) }
-	it { is_expected.to have_db_column(:date).of_type(:string) }
+	it { is_expected.to have_db_column(:ga_number).of_type(:string) }
+	it { is_expected.to have_db_column(:vs_number).of_type(:string) }
     it { is_expected.to have_db_column(:group).of_type(:string) }
     it { is_expected.to have_db_column(:library).of_type(:string) }
     it { is_expected.to have_db_column(:photo_link).of_type(:string) }
@@ -36,12 +36,8 @@ RSpec.describe Text, type: :model do
 
 	context "Attributes" do
 		it "has a catalog number" do 
-			expect(text_one.number).to eq(NUMBER)
+			expect(text_one.ga_number).to eq(NUMBER)
 		end 
-
-		it "has a date" do 
-			expect(text_one.date).to eq(DATE)
-		end
 
     it "has a group" do
 			expect(text_one.group).to eq(GROUP)
@@ -49,9 +45,6 @@ RSpec.describe Text, type: :model do
 	end
 
     context "Validations" do
-	
-		it { should validate_presence_of(:date) }
-		it { should validate_presence_of(:number)}
     	it { should validate_presence_of(:group)}
     end
 
