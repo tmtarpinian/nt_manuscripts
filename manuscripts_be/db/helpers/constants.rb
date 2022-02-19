@@ -30,7 +30,8 @@ class Constants
       MINUSCULE: "Minuscule",
       PAPYRI: "Papyri",
       LECTIONARY: "Lectionary",
-      VERSION: "Version"
+      VERSION: "Version",
+      AMULET: "Amulet"
     }
 
     NESTLE_ALAND_VERSIONS = {
