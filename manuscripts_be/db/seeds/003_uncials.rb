@@ -1167,10 +1167,10 @@ text = Text.find_or_create_by(ga_number: '0223', group: group)
 associate_to_nestle_aland(txt:text, array_of_integers: TwoHundredTwentyThree::PAUL, type: Constants::ALEXANDRIAN_TEXT_TYPE, editions: Constants::NESTLE_ALAND_VERSIONS[:ALL_VERSIONS], date: 'VI')
 print_time_elapsed(text, start_time, group)
 
-start_time = get_timestamp         ## == 0186 split?
-text = Text.find_or_create_by(ga_number: '0224', date: 'IX', group: group)
-associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: nil)
-print_time_elapsed(text, start_time, group)
+# start_time = get_timestamp         ## == 0186 split?
+# text = Text.find_or_create_by(ga_number: '0224', date: 'IX', group: group)
+# associate_to_nestle_aland(txt:text, array_of_integers: Constants::PAUL, type: Constants::MIXED_TEXT_TYPE, editions: nil)
+# print_time_elapsed(text, start_time, group)
 
 start_time = get_timestamp
 text = Text.find_or_create_by(ga_number: '0225', group: group)
