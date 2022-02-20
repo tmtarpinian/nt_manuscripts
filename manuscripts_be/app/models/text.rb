@@ -13,7 +13,7 @@
 #  updated_at :datetime         not null
 #
 class Text < ApplicationRecord
-    has_many :reference_texts
+    has_many :reference_texts, dependent: :destroy
     has_many :references, through: :reference_texts
     has_many :westcott_horts, through: :reference_texts
     validates_presence_of :group
@@ -47,12 +47,7 @@ class Text < ApplicationRecord
     def clear_references!   #deletes children (reference_texts) and grandchildren (nestle_alands)
         reference_text_ids = reference_texts.pluck(:id)
         reference_text_ids.each do |rt_id|
-            rt = ReferenceText.find rt_id
-            na_ids = rt.nestle_alands.pluck(:id)
-            na_ids.each do | na_id|
-                NestleAland.delete(na_id)
-            end
-            rt.destroy!
+            ReferenceText.destroy(rt_id)
         end
     end
 

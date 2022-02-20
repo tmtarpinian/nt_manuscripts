@@ -19,5 +19,5 @@
 class ReferenceText < ApplicationRecord
     belongs_to :text
     belongs_to :reference
-    has_many :nestle_alands
+    has_many :nestle_alands, dependent: :destroy
 end
