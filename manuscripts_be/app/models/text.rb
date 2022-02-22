@@ -13,7 +13,7 @@
 #  updated_at :datetime         not null
 #
 class Text < ApplicationRecord
-    has_many :reference_texts
+    has_many :reference_texts, dependent: :destroy
     has_many :references, through: :reference_texts
     has_many :westcott_horts, through: :reference_texts
     validates_presence_of :group
@@ -21,6 +21,8 @@ class Text < ApplicationRecord
     # scope :ten_texts, lambda { limit(10) }
     # scope :in_print, -> { where(out_of_print: false) }
     scope :papyri, -> { where(group: "Papyri") }
+    scope :papyri_with_most_verses, -> {papyri.max_by {|text| text.references.length}}
+
     scope :uncials, -> { where(group: "Uncial") }
     scope :minuscules, -> { where(group: "Minuscule") }
     scope :papyri_input, -> { (where(group: "Papyri").count.to_f / 141.to_f).round(2)}
@@ -40,6 +42,13 @@ class Text < ApplicationRecord
 
     def nt_coverage
         @coverage ||= (total_verses.to_f / 7958).round(3) # TODO: Add this to constants. Use this to avoid running Reference.all.length each time we need this number
+    end
+
+    def clear_references!   #deletes children (reference_texts) and grandchildren (nestle_alands)
+        reference_text_ids = reference_texts.pluck(:id)
+        reference_text_ids.each do |rt_id|
+            ReferenceText.destroy(rt_id)
+        end
     end
 
 end

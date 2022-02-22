@@ -13,43 +13,45 @@ namespace :transliteration_parser do
     f = File.open(file, "r")
     f.each_line do |line|
       verse_arrays = line.split("}}")  ## breaks up the text file into arrays of verses
-      # binding.pry
       verse_arrays.each do |verse_array|
         
-        verse_header = verse_array.scan(/break.+break/)[0]
+        verse_header = verse_array.scan(/break.+breakthrow/)[0]
         manuscripts = verse_array.split(verse_header)[1] # removes the verse from the first array
         verse_data = verse_header.split("break")[1]
         transliterations_added[verse_data] = []
-        book, chapter, verse = verse_data.split(".")    # Destructure array to variables
+
+        reference_info = verse_array.match(/[^(break)]\w.+(break)/)[0].split("break")[0]
+        puts "Begin parsing for #{reference_info}"
+        book, chapter, verse = reference_info.split(".")    # Destructure array to variables
         book = book.titleize
         reference = Reference.find_by(book: Constants::BOOK_ABBREVIATIONS[book.to_sym], chapter: chapter.to_i, verse: verse.to_i)
         translation_arrays = manuscripts.split("u003ct").map{|row| row.split("\\u003c/t\\")[0]}
         
         translation_arrays.each do |row|
           transliteration_value = row.split("u003e")[1]
-          next if transliteration_value == nil
-
+          next if transliteration_value == nil || transliteration_value == "\\" || transliteration_value == "[lac]"
+          
           #strip string of initial non-alphanumeric chars
-          strip_initial_nonalphanumeric(transliteration_value)
+          transliteration_value = strip_initial_nonalphanumeric(transliteration_value)
 
           witness = format_witness(row)
+          puts "Searching for #{witness} in database..."
 
           found_text = Text.find_by(ga_number: witness)
            if found_text
             rt = ReferenceText.find_by(reference_id: reference.id, text_id: found_text.id)
             if rt
-              # begin
-                # binding.pry
+              begin
               rt.update(transliteration: transliteration_value)
               transliterations_added[verse_data].push(witness)
-              # rescue => e
-              #   print "\e[1;31m Update failed \e[0m"
-              #   print "\e[1;31m #{e} \e[0m"
-              # end
+              rescue => e
+                print "\e[1;31m Update failed \e[0m"
+                print "\e[1;31m #{e} \e[0m"
+              end
             else
               reference_text_not_found.push(verse_data + " for: " + found_text.ga_number)
             end
-           else
+          else
             text_not_found.push(witness)
            end
         end
